@@ -151,11 +151,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               if (snapshot.hasData) {
                 return ListView(
                   children: [
-                    prayerCard("Fajr", snapshot.data.fajr),
-                    prayerCard("Zuhar", snapshot.data.dhuhr),
-                    prayerCard("Asr", snapshot.data.asr),
-                    prayerCard("Maghrib", snapshot.data.maghrib),
-                    prayerCard("Isha", snapshot.data.isha),
+                    SizedBox(height: 20,),
+                    prayerCard("Fajr", snapshot.data.items.elementAt(0).fajr),
+                    prayerCard("Zuhar", snapshot.data.items.elementAt(0).dhuhr),
+                    prayerCard("Asr", snapshot.data.items.elementAt(0).asr),
+                    prayerCard("Maghrib", snapshot.data.items.elementAt(0).maghrib),
+                    prayerCard("Isha", snapshot.data.items.elementAt(0).isha),
                   ],
                 );
               } else if (snapshot.hasError) {
@@ -213,7 +214,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           new Text(
-                              time, style: CustomTextStyle.subtitle20(context)
+                              time+"   ", style: CustomTextStyle.subtitle20(context)
                           ),
                         ],
                       ),

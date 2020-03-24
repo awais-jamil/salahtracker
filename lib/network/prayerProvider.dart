@@ -10,7 +10,7 @@ class PrayerApiProvider {
   Future<Prayer> fetchTimesList() async {
     print("entered");
     final response = await client
-        .get("http://api.aladhan.com/v1/timings/1398332113?latitude=51.508515&longitude=-0.1254872&method=2");
+        .get("https://muslimsalat.com/lahore.json");
     print(response.body.toString());
     if (response.statusCode == 200) {
       // If the call to the server was successful, parse the JSON
